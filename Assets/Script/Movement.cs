@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb2d;
+    public Animator animator;
     private Vector2 moveInput;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class Movement : MonoBehaviour
         moveInput.y = Input.GetAxisRaw("Vertical");
 
         moveInput.Normalize();
+
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
+        animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         rb2d.velocity = moveInput * moveSpeed;
     }
