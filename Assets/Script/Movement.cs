@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -27,5 +28,12 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Speed", moveInput.sqrMagnitude);
 
         rb2d.velocity = moveInput * moveSpeed;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("exit"))
+        {
+            SceneManager.LoadScene("Congratz");
+        }
     }
 }

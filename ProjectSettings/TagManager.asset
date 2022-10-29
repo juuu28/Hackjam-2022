@@ -6,15 +6,17 @@ TagManager:
   tags:
   - player
   - enemy
+  - wall
+  - exit
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
-  - 
-  - 
+  - block
+  - lantai
   - 
   - 
   - 
@@ -42,4 +44,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: lantai
+    uniqueID: 3030010401
+    locked: 0
+  - name: block
+    uniqueID: 3832815627
+    locked: 0
+  - name: player
+    uniqueID: 24201149
+    locked: 0
+  - name: object
+    uniqueID: 1458491571
     locked: 0
